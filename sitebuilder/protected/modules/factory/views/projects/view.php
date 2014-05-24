@@ -32,7 +32,7 @@ $this->menu=array(
 		'date',
 	),
 )); ?>
-<?php $this->widget('zii.widgets.TbButton', array(
+<?php $this->widget('bootstrap.widgets.TbButton', array(
     'label'=>'Добавить блок',
     'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
     'size'=>'large', // null, 'large', 'small' or 'mini'
