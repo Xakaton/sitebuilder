@@ -35,9 +35,7 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1','95.172.144.116'),
             'generatorPaths' => array('bootstrap.gii'),
 		),
-        'modules'=>array(
-            'factory' => array('class' => 'application.modules.factory.FactoryModule'),
-        ),
+        'factory' => array('class' => 'application.modules.factory.FactoryModule'),
 	),
 
 	// application components
