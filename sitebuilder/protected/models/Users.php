@@ -6,6 +6,9 @@
  * The followings are the available columns in table 'users':
  * @property integer $id
  * @property string $name
+ * @property string $username
+ * @property string $password
+ * @property string $email
  */
 class Users extends CActiveRecord
 {
@@ -25,10 +28,13 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'length', 'max'=>50),
+			array('name', 'length', 'max'=>255),
+            array('username', 'length', 'max'=>50),
+            array('password', 'length', 'max'=>50),
+            array('email', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name', 'safe', 'on'=>'search'),
+			array('id, name, username, password, email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,7 +56,10 @@ class Users extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
+			'name' => 'Имя',
+            'username' => 'Логин',
+			'password' => 'Пароль',
+            'email' => 'Элетронная почта'
 		);
 	}
 
@@ -74,6 +83,9 @@ class Users extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
+        $criteria->compare('username',$this->username,true);
+        $criteria->compare('password',$this->password,true);
+        $criteria->compare('email',$this->email,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

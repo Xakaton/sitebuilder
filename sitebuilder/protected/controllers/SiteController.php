@@ -72,7 +72,7 @@ class SiteController extends Controller
 					"Content-Type: text/plain; charset=UTF-8";
 
 				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				Yii::app()->user->setFlash('contact','Спасибо за то что связались с нами.');
 				$this->refresh();
 			}
 		}
@@ -105,6 +105,28 @@ class SiteController extends Controller
 		$this->render('login',array('model'=>$model));
 	}
 
+    public function actionRegister()
+    {
+        $model=new RegisterForm;
+
+        // if it is ajax validation request
+        if(isset($_POST['ajax']) && $_POST['ajax']==='register-form')
+        {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+
+        // collect user input data
+        if(isset($_POST['RegisterForm']))
+        {
+            $model->attributes=$_POST['RegisterForm'];
+            // validate user input and redirect to the previous page if valid
+            if($model->validate() && $model->register())
+                $this->redirect(Yii::app()->user->returnUrl);
+        }
+        // display the login form
+        $this->render('register',array('model'=>$model));
+    }
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
