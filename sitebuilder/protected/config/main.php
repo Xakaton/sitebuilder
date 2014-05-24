@@ -50,7 +50,8 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-                '<module:\w+>'=>'<module:\w+>',
+                'admin'=>'admin',
+                'factory'=>'factory',
                 '<module:\w+>/<controller:\w+>' => '<module>/<controller>',
                 '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                 '<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>/<id>',
