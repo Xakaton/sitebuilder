@@ -36,6 +36,7 @@ return array(
             'generatorPaths' => array('bootstrap.gii'),
 		),
         'factory' => array('class' => 'application.modules.factory.FactoryModule'),
+        'admin' => array('class' => 'application.modules.admin.AdminModule'),
 	),
 
 	// application components
@@ -49,7 +50,7 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-                'factory'=>'factory',
+                '<module:\w+>'=>'<module:\w+>',
                 '<module:\w+>/<controller:\w+>' => '<module>/<controller>',
                 '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                 '<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>/<id>',
