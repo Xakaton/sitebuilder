@@ -43,6 +43,10 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+            'authManager' => array(
+                'class' => 'CDbAuthManager',
+                'defaultRoles' => array(guest),
+            ),
 		),
 		// uncomment the following to enable URLs in path-format
 
