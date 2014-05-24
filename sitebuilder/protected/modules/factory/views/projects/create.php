@@ -5,16 +5,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Projects'=>array('index'),
-	'Create',
+	'Сайты'=>array('index'),
+	'Создать',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List Projects', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage Projects', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-list','label'=>'Список сайтов', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Управление сайтами', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Create','Projects') ?>
+<?php echo BsHtml::pageHeader('Создание','Сайты') ?>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

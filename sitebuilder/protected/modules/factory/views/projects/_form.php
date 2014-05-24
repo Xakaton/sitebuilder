@@ -13,15 +13,15 @@
     'enableAjaxValidation'=>false,
 )); ?>
 
-    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
+    <p class="help-block">Поля помеченные <span class="required">*</span> обязательны.</p>
 
     <?php echo $form->errorSummary($model); ?>
 
     <?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>50)); ?>
-    <?php echo $form->textFieldControlGroup($model,'userid'); ?>
+    <?php echo $form->hiddenField($model,'userid',array('type'=>'hidden', 'value'=>Yii::app()->user->getID())); ?>
     <?php echo $form->textFieldControlGroup($model,'description',array('maxlength'=>255)); ?>
-    <?php echo $form->textFieldControlGroup($model,'date'); ?>
+    <?php echo $form->hiddenField($model,'date',array('type'=>'hidden', 'value'=>date("Y-m-d H:i:s"))); ?>
 
-    <?php echo BsHtml::submitButton('Submit', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
+    <?php echo BsHtml::submitButton('Сохранить', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 <?php $this->endWidget(); ?>
