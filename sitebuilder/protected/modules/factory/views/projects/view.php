@@ -32,7 +32,7 @@ $this->menu=array(
 		'date',
 	),
 )); ?>
-<?php echo CHTML::link('Добавить блок','createblock/'.$model->id); ?>
+<?php echo CHTML::link('Добавить блок','blocks/create/'.$model->id); ?>
 <?php echo BsHtml::pageHeader('Блоки') ?>
 <?php if (isset($blocks)) {
         $this->widget('bootstrap.widgets.BsListView',array(

@@ -56,7 +56,7 @@ class BlocksController extends Controller
 	* Creates a new model.
 	* If creation is successful, the browser will be redirected to the 'view' page.
 	*/
-	public function actionCreate()
+	public function actionCreate($id)
 	{
 		$model=new Blocks;
 
@@ -66,6 +66,7 @@ class BlocksController extends Controller
 		if(isset($_POST['Blocks']))
 		{
 			$model->attributes=$_POST['Blocks'];
+            $model->pid = $id;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
