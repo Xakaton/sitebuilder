@@ -5,20 +5,20 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Projects'=>array('index'),
+	'Сайты'=>array('index'),
 	$model->name,
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List Projects', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create Projects', 'url'=>array('create')),
-	array('icon' => 'glyphicon glyphicon-edit','label'=>'Update Projects', 'url'=>array('update', 'id'=>$model->id)),
-	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Delete Projects', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage Projects', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-list','label'=>'Список сайтов', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Создать сайт', 'url'=>array('create')),
+	array('icon' => 'glyphicon glyphicon-edit','label'=>'Изменить сайт', 'url'=>array('update', 'id'=>$model->id)),
+	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Удалить сайт', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Управление сайтами', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('View','Projects '.$model->id) ?>
+<?php echo BsHtml::pageHeader('Просмотр','Сайты '.$model->id) ?>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
 	'htmlOptions' => array(
@@ -28,7 +28,6 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'name',
-		'userid',
 		'description',
 		'date',
 	),

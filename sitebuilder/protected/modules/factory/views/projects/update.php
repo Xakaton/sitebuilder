@@ -5,18 +5,18 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Projects'=>array('index'),
+	'Сайты'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
-	'Update',
+	'Изменить',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List Projects', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create Projects', 'url'=>array('create')),
-    array('icon' => 'glyphicon glyphicon-list-alt','label'=>'View Projects', 'url'=>array('view', 'id'=>$model->id)),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage Projects', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-list','label'=>'Список сайтов', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Создать сайт', 'url'=>array('create')),
+    array('icon' => 'glyphicon glyphicon-list-alt','label'=>'Просмотреть сайт', 'url'=>array('view', 'id'=>$model->id)),
+    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Управление сайтами', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Update','Projects '.$model->id) ?>
+<?php echo BsHtml::pageHeader('Изменить','Сайты '.$model->id) ?>
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

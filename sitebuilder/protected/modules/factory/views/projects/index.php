@@ -5,7 +5,7 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Projects',
+	'Сайты',
 );
 
 $this->menu=array(

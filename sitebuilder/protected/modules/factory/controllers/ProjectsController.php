@@ -32,12 +32,8 @@ class ProjectsController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -86,21 +82,22 @@ class ProjectsController extends Controller
 	*/
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+        $model=$this->loadModel($id);
+        if (Yii::app()->user->getID() == $this->loadModel($id)->userid) {
+            // Uncomment the following line if AJAX validation is needed
+            // $this->performAjaxValidation($model);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+            if(isset($_POST['Projects']))
+            {
+                $model->attributes=$_POST['Projects'];
+                if($model->save())
+                    $this->redirect(array('view','id'=>$model->id));
+            }
 
-		if(isset($_POST['Projects']))
-		{
-			$model->attributes=$_POST['Projects'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+            $this->render('update',array(
+                'model'=>$model,
+            ));
+        } else throw new CHttpException(403,'Не хватает прав доступа.');
 	}
 
 	/**
@@ -110,7 +107,7 @@ class ProjectsController extends Controller
 	*/
 	public function actionDelete($id)
 	{
-		if(Yii::app()->request->isPostRequest)
+		if(Yii::app()->request->isPostRequest && Yii::app()->user->getID() == $this->loadModel($id)->userid)
 		{
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
@@ -118,9 +115,10 @@ class ProjectsController extends Controller
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+            else
+                throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+		} else throw new CHttpException(403,'Не хватает прав доступа.');
+
 	}
 
 	/**
@@ -128,7 +126,17 @@ class ProjectsController extends Controller
 	*/
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Projects');
+        $criteria=new CDbCriteria(array(
+            'condition'=>'userid='.Yii::app()->user->getID(),
+            'order'=>'date DESC',
+            'with'=>'commentCount',
+        ));
+		$dataProvider=new CActiveDataProvider('Projects', array(
+            'pagination'=>array(
+                'pageSize'=>10,
+            ),
+            'criteria'=>$criteria,
+        ));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -139,7 +147,7 @@ class ProjectsController extends Controller
 	*/
 	public function actionAdmin()
 	{
-		$model=new Projects('search');
+		$model=Projects::model()->findAllByAttributes(array('userid'=>Yii::app()->user->getID()));
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Projects']))
 			$model->attributes=$_GET['Projects'];

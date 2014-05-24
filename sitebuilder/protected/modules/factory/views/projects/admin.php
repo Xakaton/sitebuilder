@@ -4,8 +4,8 @@
 
 
 $this->breadcrumbs=array(
-	'Projects'=>array('index'),
-	'Manage',
+	'Сайты'=>array('index'),
+	'Управление',
 );
 
 $this->menu=array(
@@ -27,16 +27,16 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<?php echo BsHtml::pageHeader('Manage','Projects') ?>
+<?php echo BsHtml::pageHeader('Управление','Сайты') ?>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title"><?php echo BsHtml::button('Advanced search',array('class' =>'search-button', 'icon' => BsHtml::GLYPHICON_SEARCH,'color' => BsHtml::BUTTON_COLOR_PRIMARY), '#'); ?></h3>
+        <h3 class="panel-title"><?php echo BsHtml::button('Расширенный поиск',array('class' =>'search-button', 'icon' => BsHtml::GLYPHICON_SEARCH,'color' => BsHtml::BUTTON_COLOR_PRIMARY), '#'); ?></h3>
     </div>
     <div class="panel-body">
         <p>
-            You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
+            Введите оператор сравнения (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
                 &lt;&gt;</b>
-            or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+            или <b>=</b>) в начале вашей поисковой фразы.
         </p>
 
         <div class="search-form" style="display:none">
@@ -53,7 +53,6 @@ $('.search-form form').submit(function(){
 			'columns'=>array(
         		'id',
 		'name',
-		'userid',
 		'description',
 		'date',
 				array(
