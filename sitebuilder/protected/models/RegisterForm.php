@@ -45,7 +45,7 @@ class RegisterForm extends CFormModel
 	public function register()
     {
         $record = Users::model()->findAllByAttributes(array('username'=>$this->username));
-		if($record===null)
+		if($record===false)
 		{
             $record = new Users();
             $record->name = $this->name;
