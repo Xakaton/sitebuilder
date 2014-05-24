@@ -43,10 +43,6 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
-            'authManager' => array(
-                'class' => 'CDbAuthManager',
-                'defaultRoles' => array(guest),
-            ),
 		),
 		// uncomment the following to enable URLs in path-format
 
@@ -82,6 +78,11 @@ return array(
 			'password' => 'bQ0uhYCUW9heZMxO',
 			'charset' => 'utf8',
 		),
+        'authManager' => array(
+            'class' => 'CDbAuthManager',
+            'defaultRoles' => array(guest),
+            'connectionID'=>'db',
+        ),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
