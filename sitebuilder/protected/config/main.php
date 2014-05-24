@@ -34,7 +34,7 @@ return array(
             'generatorPaths' => array('bootstrap.gii'),
 		),
         'modules'=>array(
-            'factory',
+            'factory' => array('class' => 'application.modules.factory.FactoryModule'),
         ),
 	),
 
