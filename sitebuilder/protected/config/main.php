@@ -79,7 +79,7 @@ return array(
 			'charset' => 'utf8',
 		),
         'authManager' => array(
-            'class' => 'c',
+            'class' => 'PhpAuthManager',
             'defaultRoles' => array(guest),
         ),
 		'errorHandler'=>array(
