@@ -129,7 +129,6 @@ class ProjectsController extends Controller
         $criteria=new CDbCriteria(array(
             'condition'=>'userid='.Yii::app()->user->getID(),
             'order'=>'date DESC',
-            'with'=>'commentCount',
         ));
 		$dataProvider=new CActiveDataProvider('Projects', array(
             'pagination'=>array(
