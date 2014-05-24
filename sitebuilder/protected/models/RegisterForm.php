@@ -21,7 +21,7 @@ class RegisterForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('username, password', 'name', 'required'),
+			array('username, password, name', 'required'),
 		);
 	}
 
