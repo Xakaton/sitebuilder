@@ -46,17 +46,20 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
+                'gii'=>'gii',
+                'gii/<controller:\w+>'=>'gii/<controller>',
+                'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-        'bootstrap' => array(
-                'class' => 'bootstrap.components.BsApi'
-            ),
 		),
+        'bootstrap' => array(
+            'class' => 'bootstrap.components.BsApi'
+        ),
 		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		)*/,
+		),*/
 		// uncomment the following to use a MySQL database
 
 		'db'=>array(
