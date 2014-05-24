@@ -2,7 +2,13 @@
 
 class SiteController extends Controller
 {
-	/**
+
+    public function init()
+    {
+        Yii::app()->theme = 'bootstrap';
+        parent::init();
+    }
+    /**
 	 * Declares class-based actions.
 	 */
 	public function actions()
@@ -24,6 +30,7 @@ class SiteController extends Controller
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
+     *
 	 */
 	public function actionIndex()
 	{
