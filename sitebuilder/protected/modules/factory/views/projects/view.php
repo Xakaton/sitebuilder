@@ -32,12 +32,7 @@ $this->menu=array(
 		'date',
 	),
 )); ?>
-<?php $this->widget('bootstrap.widgets.TbButton', array(
-    'label'=>'Добавить блок',
-    'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-    'size'=>'large', // null, 'large', 'small' or 'mini'
-    'url'=>array('/blocks/create'),
-)); ?>
+<?php echo CHTML::link('Добавить блок','createblock/'.$model->id); ?>
 <?php echo BsHtml::pageHeader('Блоки') ?>
 <?php $this->widget('bootstrap.widgets.BsListView',array(
     'dataProvider'=>$blocks,
