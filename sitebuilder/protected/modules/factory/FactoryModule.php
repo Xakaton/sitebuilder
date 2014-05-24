@@ -12,6 +12,9 @@ class FactoryModule extends CWebModule
 			'factory.models.*',
 			'factory.components.*',
 		));
+
+        Yii::app()->theme = 'bootstrap';
+        parent::init();
 	}
 
 	public function beforeControllerAction($controller, $action)
