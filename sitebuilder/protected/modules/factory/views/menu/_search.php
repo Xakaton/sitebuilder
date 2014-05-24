@@ -1,6 +1,6 @@
 <?php
-/* @var $this ProjectsController */
-/* @var $model Projects */
+/* @var $this MenuController */
+/* @var $model Menu */
 /* @var $form BSActiveForm */
 ?>
 
@@ -11,12 +11,11 @@
 
     <?php echo $form->textFieldControlGroup($model,'id'); ?>
     <?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>50)); ?>
-    <?php echo $form->textFieldControlGroup($model,'userid'); ?>
-    <?php echo $form->textFieldControlGroup($model,'description',array('maxlength'=>255)); ?>
-    <?php echo $form->textFieldControlGroup($model,'date'); ?>
+    <?php echo $form->textFieldControlGroup($model,'blockid'); ?>
+    <?php echo $form->textFieldControlGroup($model,'sort'); ?>
 
     <div class="form-actions">
-        <?php echo BsHtml::submitButton('Поиск',  array('color' => BsHtml::BUTTON_COLOR_PRIMARY,));?>
+        <?php echo BsHtml::submitButton('Search',  array('color' => BsHtml::BUTTON_COLOR_PRIMARY,));?>
     </div>
 
 <?php $this->endWidget(); ?>
