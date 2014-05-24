@@ -79,9 +79,8 @@ return array(
 			'charset' => 'utf8',
 		),
         'authManager' => array(
-            'class' => 'CDbAuthManager',
+            'class' => 'c',
             'defaultRoles' => array(guest),
-            'connectionID'=>'db',
         ),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
