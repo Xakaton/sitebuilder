@@ -36,13 +36,12 @@
     "$('[data-toggle=\"tooltip\"]').tooltip();
     $('[data-toggle=\"popover\"]').tooltip()"
     ,CClientScript::POS_READY);
-
+   ?>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/html5shiv.js"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/respond.min.js"></script>
     <![endif]-->
-    ?>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
