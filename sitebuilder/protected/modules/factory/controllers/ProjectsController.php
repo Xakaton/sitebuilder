@@ -146,7 +146,7 @@ class ProjectsController extends Controller
 	*/
 	public function actionAdmin()
 	{
-		$model=Projects::model()->findAllByAttributes(array('userid'=>Yii::app()->user->getID()));
+		$model= new Projects('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Projects']))
 			$model->attributes=$_GET['Projects'];
