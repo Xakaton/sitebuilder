@@ -148,6 +148,7 @@ class SiteController extends Controller
                 'condition'=>'pid=:id',
                 'params'=>array(':id'=>$id)));;
             if (count($blocks) > 0) {
+                $content = "";
                 foreach($blocks as $b) {
                     $content.="<div class='block'".$b->id.">".$b->content."</div>\n";
                 }

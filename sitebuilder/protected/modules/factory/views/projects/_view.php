@@ -6,7 +6,7 @@
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-    <a href="view?id=<?php echo $data->id;?>"><?php echo CHtml::encode($data->name); ?></a>
+    <a href="<?php echo Yii::app()->request->baseUrl; ?>/factory/projects/view?id=<?php echo $data->id;?>"><?php echo CHtml::encode($data->name); ?></a>
 	<br />
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
 	<?php echo CHtml::encode($data->description); ?>
