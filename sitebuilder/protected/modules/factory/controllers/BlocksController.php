@@ -55,11 +55,13 @@ class BlocksController extends Controller
 	/**
 	* Creates a new model.
 	* If creation is successful, the browser will be redirected to the 'view' page.
+    * @param integer $id the ID of the model to be updated
 	*/
 	public function actionCreate($id)
 	{
 		$model=new Blocks;
-
+        $sizes = Sizes::model()->findAll();
+        $types = Types::model()->findAll();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -73,6 +75,8 @@ class BlocksController extends Controller
 
 		$this->render('create',array(
 		'model'=>$model,
+        'sizes'=>$sizes,
+        'types'=>$types
 		));
 	}
 
@@ -123,9 +127,26 @@ class BlocksController extends Controller
 	/**
 	* Lists all models.
 	*/
-	public function actionIndex()
+	public function actionIndex($id)
 	{
-		$dataProvider=new CActiveDataProvider('Blocks');
+        if (isset($id)) {
+            $criteria=new CDbCriteria(array(
+                'condition'=>'pid='.$id,
+                'order'=>'date DESC',
+            ));
+            $dataProvider=new CActiveDataProvider('Blocks', array(
+                'pagination'=>array(
+                    'pageSize'=>10,
+                ),
+                'criteria'=>$criteria,
+            ));
+        } else {
+            $dataProvider=new CActiveDataProvider('Blocks', array(
+                'pagination'=>array(
+                    'pageSize'=>10,
+                )
+            ));
+        }
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -134,9 +155,11 @@ class BlocksController extends Controller
 	/**
 	* Manages all models.
 	*/
-	public function actionAdmin()
+	public function actionAdmin($id)
 	{
-		$model=new Blocks('search');
+        if (isset($id)) {
+            $model=new Blocks('search','pid='.$id);
+        } else $model=new Blocks('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Blocks']))
 			$model->attributes=$_GET['Blocks'];

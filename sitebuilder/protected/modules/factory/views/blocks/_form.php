@@ -13,17 +13,16 @@
     'enableAjaxValidation'=>false,
 )); ?>
 
-    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
+    <p class="help-block">Поля помеченные<span class="required">*</span> обязательны для заполнения.</p>
 
     <?php echo $form->errorSummary($model); ?>
 
-    <?php echo $form->textFieldControlGroup($model,'pid'); ?>
+    <?php echo $form->hiddenField($model,'pid',array('type'=>'hidden', 'value'=>$model->pid)); ?>
     <?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>50)); ?>
     <?php echo $form->textAreaControlGroup($model,'content',array('rows'=>6)); ?>
-    <?php echo $form->textFieldControlGroup($model,'size'); ?>
+    <?php echo $form->dropDownListRow($model, 'dropdown', $sizes );?>
     <?php echo $form->textFieldControlGroup($model,'sort'); ?>
-    <?php echo $form->textFieldControlGroup($model,'type'); ?>
-
+    <?php echo $form->dropDownListRow($model, 'dropdown', $types );?>
     <?php echo BsHtml::submitButton('Submit', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 <?php $this->endWidget(); ?>

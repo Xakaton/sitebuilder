@@ -5,16 +5,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Blocks'=>array('index'),
+	'Блоки'=>array('index/id/'.$model->pid),
 	$model->name,
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List Blocks', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create Blocks', 'url'=>array('create')),
-	array('icon' => 'glyphicon glyphicon-edit','label'=>'Update Blocks', 'url'=>array('update', 'id'=>$model->id)),
-	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Delete Blocks', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage Blocks', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-list','label'=>'Список Блоков', 'url'=>array('index/id/'.$model->pid)),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Создать Блок', 'url'=>array('create/id/'.$model->pid)),
+	array('icon' => 'glyphicon glyphicon-edit','label'=>'Изменить Блок', 'url'=>array('update', 'id'=>$model->id)),
+	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Удалить Блок', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Управление Блоками', 'url'=>array('admin', 'id'=>$model->pid)),
 );
 ?>
 
