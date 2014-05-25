@@ -61,6 +61,7 @@
                 array('label'=>'Главная', 'url'=>array('/site/index')),
                 array('label'=>'О нас', 'url'=>array('/site/page', 'view'=>'about')),
                 array('label'=>'Контакты', 'url'=>array('/site/contact')),
+                array('label'=>'Мои сайты', 'url'=>array('/factory/projects'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Войти', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                 array('label'=>'Выйти ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
             ),

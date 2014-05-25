@@ -140,4 +140,22 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+    public function actionLanding($id)
+    {
+        if (isset($id)) {
+
+        }
+        $blocks = Blocks::model()->findAll(array('pid'=>$id,'order'=>'sort'));;
+        if (count($blocks) > 0) {
+            foreach($blocks as $b) {
+                $content.="<div class='block'".$b->id.">".$b->content."</div>\n";
+            }
+        }
+        $project = Projects::model()->findByPk($id);
+        $this->pageTitle = $project->name." | ".$project->description;
+        Yii::app()->theme = 'landing';
+        parent::init();
+        $this->render('landing',array('content'=>$content));
+    }
 }
