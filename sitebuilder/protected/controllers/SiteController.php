@@ -144,18 +144,19 @@ class SiteController extends Controller
     public function actionLanding($id)
     {
         if (isset($id)) {
-
-        }
-        $blocks = Blocks::model()->findAll(array('pid'=>$id,'order'=>'sort'));;
-        if (count($blocks) > 0) {
-            foreach($blocks as $b) {
-                $content.="<div class='block'".$b->id.">".$b->content."</div>\n";
+            $blocks = Blocks::model()->findAll(array('order'=>'sort',
+                'condition'=>'pid=:id',
+                'params'=>array(':id'=>$id)));;
+            if (count($blocks) > 0) {
+                foreach($blocks as $b) {
+                    $content.="<div class='block'".$b->id.">".$b->content."</div>\n";
+                }
             }
+            $project = Projects::model()->findByPk($id);
+            $this->pageTitle = $project->name." | ".$project->description;
+            Yii::app()->theme = 'landing';
+            parent::init();
+            $this->render('landing',array('content'=>$content));
         }
-        $project = Projects::model()->findByPk($id);
-        $this->pageTitle = $project->name." | ".$project->description;
-        Yii::app()->theme = 'landing';
-        parent::init();
-        $this->render('landing',array('content'=>$content));
     }
 }
