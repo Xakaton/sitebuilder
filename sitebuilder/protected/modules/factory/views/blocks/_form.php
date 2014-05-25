@@ -19,6 +19,7 @@
 
     <?php echo $form->hiddenField($model,'pid',array('type'=>'hidden', 'value'=>$model->pid)); ?>
     <?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>50)); ?>
+    <?php $this->widget('application.extensions.tinymce.ETinyMce', array('name'=>'content')); ?>
     <?php echo $form->textAreaControlGroup($model,'content',array('rows'=>6)); ?>
     <?php echo $form->textFieldControlGroup($model,'sort'); ?>
     <?php echo BsHtml::submitButton('Сохранить', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
