@@ -20,9 +20,7 @@
     <?php echo $form->hiddenField($model,'pid',array('type'=>'hidden', 'value'=>$model->pid)); ?>
     <?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>50)); ?>
     <?php echo $form->textAreaControlGroup($model,'content',array('rows'=>6)); ?>
-    <?php echo CHtml:dropDownList('size','',$sizes); ?>
     <?php echo $form->textFieldControlGroup($model,'sort'); ?>
-    <?php echo CHtml:dropDownList('types','',$types); ?>
-    <?php echo BsHtml::submitButton('Submit', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
+    <?php echo BsHtml::submitButton('Сохранить', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 <?php $this->endWidget(); ?>
