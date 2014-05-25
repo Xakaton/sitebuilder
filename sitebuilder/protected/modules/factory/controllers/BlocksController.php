@@ -76,7 +76,8 @@ class BlocksController extends Controller
 		$this->render('create',array(
 		'model'=>$model,
         'sizes'=>$sizes,
-        'types'=>$types
+        'types'=>$types,
+        'id'=>$id
 		));
 	}
 
