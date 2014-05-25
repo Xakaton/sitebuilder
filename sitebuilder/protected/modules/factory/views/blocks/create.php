@@ -17,4 +17,4 @@ $this->menu=array(
 
 <?php echo BsHtml::pageHeader('Создать','Блок') ?>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'sizes'=>$sizes, 'types'=>$types, 'id'=>$id)); ?>
