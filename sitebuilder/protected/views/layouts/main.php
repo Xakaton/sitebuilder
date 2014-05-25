@@ -45,6 +45,7 @@
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/tinymce/tiny_mce.js"></script>
     <script type="text/javascript">
         tinyMCE.init({
+            mode : "textareas",
             plugins : "ibrowser",
             theme_advanced_buttons3_add : "ibrowser"
         });
