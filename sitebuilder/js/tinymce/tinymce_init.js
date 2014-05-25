@@ -1,5 +1,5 @@
 tinyMCE.init({
-	mode : "exact",
+	mode : "textareas",
 	elements : "elm1,elm2,elm3,elm4,elm5",
 	theme : "advanced",
 	skin : "o2k7",

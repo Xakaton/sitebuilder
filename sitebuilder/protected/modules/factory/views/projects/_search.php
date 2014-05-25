@@ -9,9 +9,7 @@
     'method'=>'get',
 )); ?>
 
-    <?php echo $form->textFieldControlGroup($model,'id'); ?>
     <?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>50)); ?>
-    <?php echo $form->textFieldControlGroup($model,'userid'); ?>
     <?php echo $form->textFieldControlGroup($model,'description',array('maxlength'=>255)); ?>
     <?php echo $form->textFieldControlGroup($model,'date'); ?>
 

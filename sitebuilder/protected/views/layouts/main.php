@@ -43,13 +43,7 @@
     <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/respond.min.js"></script>
     <!-- Place inside the <head> of your HTML -->
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/tinymce/tiny_mce.js"></script>
-    <script type="text/javascript">
-        tinyMCE.init({
-            mode : "textareas",
-            plugins : "ibrowser",
-            theme_advanced_buttons3_add : "ibrowser"
-        });
-    </script>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/tinymce/tinymce_init.js"></script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 

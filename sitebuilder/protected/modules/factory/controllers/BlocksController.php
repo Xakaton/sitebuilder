@@ -133,7 +133,7 @@ class BlocksController extends Controller
         if (isset($id)) {
             $criteria=new CDbCriteria(array(
                 'condition'=>'pid='.$id,
-                'order'=>'date DESC',
+                'order'=>'sort ASC',
             ));
             $dataProvider=new CActiveDataProvider('Blocks', array(
                 'pagination'=>array(

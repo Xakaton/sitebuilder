@@ -18,7 +18,7 @@ $this->menu=array(
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Просмотр','Сайты '.$model->id) ?>
+<?php echo BsHtml::pageHeader('Просмотр','Сайт '.$model->name) ?>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
 	'htmlOptions' => array(
@@ -26,7 +26,6 @@ $this->menu=array(
 	),
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'name',
 		'description',
 		'date',
