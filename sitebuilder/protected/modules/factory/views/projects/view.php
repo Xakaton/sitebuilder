@@ -39,5 +39,5 @@ $this->menu=array(
         'itemView'=>'../blocks/_view',
      ));
 } else echo 'Для проекта не создано ни одного блока'; ?>
-<a href="<?php echo Yii::app()->request->baseUrl; ?>/landing/<?php echo $model->id; ?>"><?php echo TbHtml::button('Собрать сайт',
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/landing/<?php echo $model->id; ?>"><?php echo TbHtml::button('Собрать сайт',
     array('color' => TbHtml::BUTTON_COLOR_PRIMARY, 'size' => TbHtml::BUTTON_SIZE_LARGE)); ?></a>
