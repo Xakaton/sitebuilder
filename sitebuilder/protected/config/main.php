@@ -10,6 +10,7 @@ return array(
 	'name'=>'Sitebuilder',
     'aliases' => array(
         'bootstrap' => 'ext.bootstrap',
+        'yiistrap' => 'ext.yiistrap',
     ),
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -22,7 +23,10 @@ return array(
         'application.modules.factory.components.*',
         'bootstrap.behaviors.*',
         'bootstrap.helpers.*',
-        'bootstrap.widgets.*'
+        'bootstrap.widgets.*',
+        'yiistrap.behaviors.*',
+        'yiistrap.helpers.*',
+        'yiistrap.widgets.*'
 	),
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
@@ -66,6 +70,9 @@ return array(
 		),
         'bootstrap' => array(
             'class' => 'bootstrap.components.BsApi'
+        ),
+        'yiistrap' => array(
+            'class' => 'yiistrap.components.TbApi'
         ),
 		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
