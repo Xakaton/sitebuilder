@@ -20,9 +20,9 @@
     <?php echo $form->hiddenField($model,'pid',array('type'=>'hidden', 'value'=>$model->pid)); ?>
     <?php echo $form->textFieldControlGroup($model,'name',array('maxlength'=>50)); ?>
     <?php echo $form->textAreaControlGroup($model,'content',array('rows'=>6)); ?>
-    <?php echo $form->dropDownListRow($model, 'dropdown', $sizes );?>
+    <?php echo TbHtml::dropDownListRow($model, 'dropdown', $sizes );?>
     <?php echo $form->textFieldControlGroup($model,'sort'); ?>
-    <?php echo $form->dropDownListRow($model, 'dropdown', $types );?>
+    <?php echo TbHtml::dropDownListRow($model, 'dropdown', $types );?>
     <?php echo BsHtml::submitButton('Submit', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 <?php $this->endWidget(); ?>
