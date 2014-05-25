@@ -175,7 +175,7 @@ class ProjectsController extends Controller
 
     public function getBlocks($id)
     {
-        if(Yii::app()->request->isPostRequest && Yii::app()->user->getID() == $this->loadModel($id)->userid)
+        if(Yii::app()->user->getID() == $this->loadModel($id)->userid)
         {
             $criteria=new CDbCriteria(array(
                 'condition'=>'pid='.$id,

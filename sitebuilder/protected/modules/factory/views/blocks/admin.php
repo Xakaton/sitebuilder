@@ -4,13 +4,13 @@
 
 
 $this->breadcrumbs=array(
-	'Blocks'=>array('index'),
-	'Manage',
+	'Блоки'=>array('index','id'=>$model->pid),
+	'Управление',
 );
 
 $this->menu=array(
-	array('icon' => 'glyphicon glyphicon-list','label'=>'List Blocks', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create Blocks', 'url'=>array('create')),
+	array('icon' => 'glyphicon glyphicon-list','label'=>'Список блоков', 'url'=>array('index','id'=>$model->pid)),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Создать блок', 'url'=>array('create','id'=>$model->pid)),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<?php echo BsHtml::pageHeader('Manage','Blocks') ?>
+<?php echo BsHtml::pageHeader('Управление','Блоки') ?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><?php echo BsHtml::button('Advanced search',array('class' =>'search-button', 'icon' => BsHtml::GLYPHICON_SEARCH,'color' => BsHtml::BUTTON_COLOR_PRIMARY), '#'); ?></h3>
@@ -51,11 +51,8 @@ $('.search-form form').submit(function(){
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
-        		'id',
-		'pid',
-		'name',
+ 		'name',
 		'content',
-		'size',
 		'sort',
 		/*
 		'type',
