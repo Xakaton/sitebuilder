@@ -42,13 +42,8 @@
     <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/html5shiv.js"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/respond.min.js"></script>
     <!-- Place inside the <head> of your HTML -->
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/tinymce/tiny_mce.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/tinymce/tinymce_init.js"></script>
-    <script type="text/javascript">
-        tinymce.init({
-            selector: "textarea"
-        });
-    </script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
