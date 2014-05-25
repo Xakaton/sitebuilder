@@ -36,7 +36,7 @@ $this->menu=array(
 <?php if (isset($blocks)) {
         $this->widget('bootstrap.widgets.BsListView',array(
         'dataProvider'=>$blocks,
-        'itemView'=>'/../blocks/_view',
+        'itemView'=>'../blocks/_view',
      ));
 } else echo 'Для проекта не создано ни одного блока';
 ?>

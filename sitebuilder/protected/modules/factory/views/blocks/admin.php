@@ -4,13 +4,13 @@
 
 
 $this->breadcrumbs=array(
-	'Блоки'=>array('index','id'=>$model->pid),
+	'Блоки'=>array('index'),
 	'Управление',
 );
 
 $this->menu=array(
-	array('icon' => 'glyphicon glyphicon-list','label'=>'Список блоков', 'url'=>array('index','id'=>$model->pid)),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Создать блок', 'url'=>array('create','id'=>$model->pid)),
+	array('icon' => 'glyphicon glyphicon-list','label'=>'Список блоков', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Создать блок', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

@@ -5,7 +5,7 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
+	<b><a href="view?id=<?php echo $data->id;?>"><?php echo CHtml::encode($data->getAttributeLabel('name')); ?></a>a>:</b>
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
@@ -15,6 +15,4 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
 	<?php echo CHtml::encode($data->date); ?>
 	<br />
-
-
 </div>

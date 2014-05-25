@@ -3,9 +3,9 @@
 /* @var $model ContactForm */
 /* @var $form CActiveForm */
 
-$this->pageTitle=Yii::app()->name . ' - Contact Us';
+$this->pageTitle=Yii::app()->name . ' - Напишите нам';
 $this->breadcrumbs=array(
-	'Contact',
+	'Контакты',
 );
 ?>
 
@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+Напишите нам по вопросам сотрудничества
 </p>
 
 <div class="form">
