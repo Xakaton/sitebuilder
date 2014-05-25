@@ -61,7 +61,7 @@ class BlocksController extends Controller
 	{
 		$model=new Blocks;
         $sizes = Sizes::model()->findAll();
-        $types = Types::model()->findAll();
+        $types = BlockType::model()->findAll();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
