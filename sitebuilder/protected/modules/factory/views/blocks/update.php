@@ -5,18 +5,18 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Blocks'=>array('index'),
+	'Блок'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
-	'Update',
+	'Изменить',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List Blocks', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create Blocks', 'url'=>array('create')),
-    array('icon' => 'glyphicon glyphicon-list-alt','label'=>'View Blocks', 'url'=>array('view', 'id'=>$model->id)),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage Blocks', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-list','label'=>'Список Блоков', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Создать блок', 'url'=>array('create')),
+    array('icon' => 'glyphicon glyphicon-list-alt','label'=>'Просмотр Блока', 'url'=>array('view', 'id'=>$model->id)),
+    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Управление Блоками', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Update','Blocks '.$model->id) ?>
+<?php echo BsHtml::pageHeader('Изменить','Блок '.$model->id) ?>
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
