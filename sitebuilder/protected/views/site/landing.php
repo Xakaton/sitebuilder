@@ -1,1 +1,1 @@
-<?php echo CHtml::encode($content); ?>
+<?php echo $content; ?>
